@@ -1,8 +1,16 @@
+import Header from "../components/Header";
+
+/* 
+React component that represent the Profile Page
+*/
 function ProfilePage() {
   return (
-    <div>
-      test
-    </div>
+    <>
+      <Header />
+      <main>
+        test
+      </main>
+    </>
   );
 }
 

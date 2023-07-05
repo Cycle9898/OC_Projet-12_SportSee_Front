@@ -6,10 +6,14 @@
 
 @import './utils/mixins';
 
-//global settings
+//Global settings
 
 @import './base/global-settings';
 
 //Components
 
+@import './components/header';
+
 //Pages
+
+@import './pages/profile-page';

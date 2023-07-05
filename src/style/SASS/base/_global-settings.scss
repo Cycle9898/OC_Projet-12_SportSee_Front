@@ -9,6 +9,10 @@ body {
     font-family: $main-font;
 }
 
+main {
+    min-height: 690px;
+}
+
 .error-msg {
     font-size: 1.5em;
     color: red;
