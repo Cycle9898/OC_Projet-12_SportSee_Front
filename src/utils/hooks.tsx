@@ -22,7 +22,13 @@ export function useFetchData(queryType: string) {
     const url: string = defineURL(queryType);
 
     useEffect(() => {
-        if (url === "") { throw new Error("Invalid URL: unable to fetch data"); }
+        setError(false);
+
+        if (url === "") {
+            setError(true);
+            console.log("Invalid URL: unable to fetch data");
+            return;
+        }
 
         setDataLoading(true);
 
@@ -45,7 +51,7 @@ export function useFetchData(queryType: string) {
 
         //Check if mocked data are used and, if needed, simulate network latency to show loading spinner
         if (url.startsWith("http://localhost:3001")) {
-            setTimeout(fetchData,300);
+            setTimeout(fetchData,400);
         } else {
             fetchData();
         }

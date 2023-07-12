@@ -3,3 +3,25 @@
 .Profile-main {
     display: flex;
 }
+
+.main-content {
+    width: 100%;
+    padding: 60px 100px;
+
+    &__title {
+        margin-bottom: 70px;
+
+        h1 {
+            @include font-set(3rem, 500);
+            margin-bottom: 25px;
+
+            span {
+                color: $main-color;
+            }
+        }
+
+        p {
+            @include font-set(1.125rem, 400);
+        }
+    }
+}
