@@ -4,59 +4,55 @@ import defineURL from "./defineURL";
 import FormatFetchedData from "./FormatFetchedData";
 
 /* 
-Custom hook used to fetch data from an API or mocked data with Axios library.
-It use a string (queryType) to determine which data is needed and will automatically define the right URL (depending on .env variables).
+Custom hook used to fetch data from the API or mocked data with Axios library.
+It fetches data from all available endpoints and store fetched data in an array.
 It also handle an error state and a loading state.
+
+fetchedData (store data from each endpoint in an array): [userInfos, userActivity, userAverageSessions, userPerformance]
+userInfos : UserInfoObj type
+userActivity : { sessions: UserActivityObj type }
+userAverageSessions : { sessions: UserAverageSessionsObj type }
+userPerformance : { data: UserPerformanceObj type }
+
+see /src/utils/formatDataTypesDeclaration.d.ts for all types
 */
-export function useFetchData(queryType: string) {
-    //to store API or mocked requested data
-    const [requestedData,setRequestedData] = useState<any>({});
+export function useFetchData() {
+    //to store API or mocked fetched data (all endpoints)
+    const [fetchedData,setFetchedData] = useState<any[]>([]);
 
     //to store API or mocked error state
     const [error,setError] = useState<boolean>(false);
 
     //to store if the loading spinner needs to appear or not
-    const [isDataLoading,setDataLoading] = useState<boolean>(false)
-
-    //construct URL according to the query type and data source(API or mocked data) thanks to defineURL() utility function
-    const url: string = defineURL(queryType);
+    const [isDataLoading,setDataLoading] = useState<boolean>(false);
 
     useEffect(() => {
         setError(false);
 
-        if (url === "") {
-            setError(true);
-            console.log("Invalid URL: unable to fetch data");
-            return;
-        }
-
         setDataLoading(true);
 
-        async function fetchData(): Promise<void> {
+        async function fetchData(queryType: string): Promise<any> {
             try {
-                const response = await axios.get(url);
-                const formatResponse: any = new FormatFetchedData(response.data,queryType);
-                setRequestedData(formatResponse.getData());
+                //use defineURL, a fonction that return an URL according to to the query type and data source, to fetch data with axios
+                const response = await axios.get(defineURL(queryType));
+
+                //Factory class to format fetched data according to query type
+                return new FormatFetchedData(response.data,queryType);
             }
 
             catch (error: unknown) {
                 setError(true);
                 console.log(error);
             }
-
-            finally {
-                setDataLoading(false);
-            }
         }
 
-        //Check if mocked data are used and, if needed, simulate network latency to show loading spinner
-        if (url.startsWith("http://localhost:3001")) {
-            setTimeout(fetchData,400);
-        } else {
-            fetchData();
-        }
+        //store all query type (user's performances, activity or...) in an array to map on it then handle all mapped promises and store all formatted data
+        const allQueryTypes: string[] = ["userInfos","userActivity","userAverageSessions","userPerformance"];
 
-    },[queryType,url])
+        Promise.all(allQueryTypes.map((queryType: string) => fetchData(queryType)))
+            .then((allFetchedData) => setFetchedData(allFetchedData))
+            .finally(() => setDataLoading(false));
+    },[]);
 
-    return { requestedData,error,isDataLoading };
+    return { fetchedData,error,isDataLoading };
 }

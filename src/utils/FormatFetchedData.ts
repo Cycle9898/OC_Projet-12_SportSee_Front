@@ -27,61 +27,56 @@ class FormatFetchedData {
 export default FormatFetchedData;
 
 class FormatFetchedUserInfos {
-    _firstName: string;
-    _dailyScore: number;
-    _keyData: { calorieCount: number,proteinCount: number,carbohydrateCount: number,lipidCount: number };
+    firstName: string;
+    dailyScore: number;
+    keyData: { calorieCount: number,proteinCount: number,carbohydrateCount: number,lipidCount: number };
 
-    constructor(data: InUserInfos) {
-        this._firstName = data.userInfos.firstName;
-        this._dailyScore = data.score ?? data.todayScore;
-        this._keyData = data.keyData;
-    }
-
-    getData() {
-        return { firstName: this._firstName,dailyScore: this._dailyScore,keyData: this._keyData };
+    constructor(fetchedData: InUserInfos) {
+        this.firstName = fetchedData.userInfos.firstName;
+        this.dailyScore = fetchedData.score ?? fetchedData.todayScore;
+        this.keyData = fetchedData.keyData;
     }
 }
 
 class FormatFetchedUserActivity {
-    _sessions: { day: string,kilogram: number,calories: number }[];
+    sessions: { day: string,kilogram: number,calories: number }[];
 
-    constructor(data: InUserActivity) {
-        this._sessions = data.sessions;
-    }
+    constructor(fetchedData: InUserActivity) {
+        this.sessions = fetchedData.sessions.map((session) => {
+            //replace all YYYY-MM-DD date strings to DD/MM ones
+            const formattedDateArray = session.day.split("-");
+            formattedDateArray.reverse().pop();
+            session.day = formattedDateArray.join("/");
 
-    getData() {
-        return [...this._sessions];
+            return session;
+        });
     }
 }
 
 class FormatFetchedUserAverageSessions {
-    _sessions: { day: number,sessionLength: number,weekDay?: string }[];
+    sessions: { day: number,sessionLength: number,weekDay?: string }[];
 
-    constructor(data: InUserAverageSessions) {
-        this._sessions = data.sessions;
-    }
+    constructor(fetchedData: InUserAverageSessions) {
+        this.sessions = fetchedData.sessions.map((session) => {
+            //add the first letter of week day, corresponding to day number, to each object and return the new array
+            const weekDays: string[] = ["L","M","M","J","V","S","D"];
+            session.weekDay = weekDays[session.day - 1];
 
-    getData() {
-        //add the first letter of week day, corresponding to day number, to each object and return the new array
-        const weekDays: string[] = ["L","M","M","J","V","S","D"]
-        this._sessions.forEach((obj) => obj.weekDay = weekDays[obj.day - 1]);
-
-        return [...this._sessions];
+            return session;
+        });
     }
 }
 
 class FormatFetchedUserPerformance {
-    _data: { value: number,kind: number,formattedKind?: string }[];
+    data: { value: number,kind: number,formattedKind?: string }[];
 
-    constructor(data: InUserPerformance) {
-        this._data = data.data;
-    }
+    constructor(fetchedData: InUserPerformance) {
+        this.data = fetchedData.data.map((dataObj) => {
+            //add a formatted "kind" property to each object and return the new array
+            const formattedKindArray: string[] = ["Cardio","Énergie","Endurance","Force","Vitesse","Intensité"];
+            dataObj.formattedKind = formattedKindArray[dataObj.kind - 1];
 
-    getData() {
-        //add a formatted "kind" property to each object and return the new array
-        const formattedKindArray: string[] = ["Cardio","Énergie","Endurance","Force","Vitesse","Intensité"];
-        this._data.forEach((obj) => obj.formattedKind = formattedKindArray[obj.kind - 1]);
-
-        return [...this._data];
+            return dataObj;
+        });
     }
 }

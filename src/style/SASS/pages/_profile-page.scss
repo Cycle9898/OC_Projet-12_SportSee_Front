@@ -24,4 +24,11 @@
             @include font-set(1.125rem, 400);
         }
     }
+
+    &__charts-grid {
+        display: grid;
+        grid-template-areas: "BC BC BC KIC"
+            "LC RC RBC KIC";
+        gap: 30px;
+    }
 }
