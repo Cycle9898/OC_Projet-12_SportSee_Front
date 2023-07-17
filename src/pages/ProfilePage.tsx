@@ -2,7 +2,7 @@ import { useFetchData } from "../utils/hooks";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import LoadingSpinner from "../components/LoadingSpinner";
-// import ActivityBarChart from "../components/ActivityBarChart";
+import ActivityBarChart from "../components/ActivityBarChart";
 
 /* 
 React component that represent the Profile Page
@@ -36,7 +36,7 @@ function ProfilePage() {
         {isDataLoading ? (
           <LoadingSpinner />
         ) : (
-          fetchedData.length === 4 &&
+          fetchedData.length > 0 &&
           <section className="main-content">
             <div className="main-content__title">
               <h1>Bonjour <span>{fetchedData[0].firstName}</span></h1>
@@ -44,7 +44,7 @@ function ProfilePage() {
             </div>
 
             <div className="main-content__charts-grid">
-              {/* <ActivityBarChart chartData={fetchedData[1].sessions} /> */}
+              <ActivityBarChart chartData={fetchedData[1].sessions} />
               <div style={{ width: 258,height: 263,gridArea: "LC",backgroundColor: "red" }}>LineChart durée sessions</div>
               <div style={{ width: 258,height: 263,gridArea: "RC",backgroundColor: "darkslategrey" }}>RadarChart type activité</div>
               <div style={{ width: 258,height: 263,gridArea: "RBC",backgroundColor: "coral" }}>RadialBarChart Score moyen</div>

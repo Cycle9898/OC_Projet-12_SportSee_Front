@@ -1,0 +1,12 @@
+/* Tooltip on user's activity bar chart */
+
+.activity-BC-tooltip {
+    background-color: #E60000;
+
+    div {
+        padding: 13px 5px;
+        text-align: center;
+        color: white;
+        @include font-set(0.6rem, 500);
+    }
+}
