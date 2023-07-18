@@ -39,14 +39,14 @@ class FormatFetchedUserInfos {
 }
 
 class FormatFetchedUserActivity {
-    sessions: { day: string,kilogram: number,calories: number }[];
+    sessions: { day: string,kilogram: number,calories: number,formattedDay?: string }[];
 
     constructor(fetchedData: InUserActivity) {
         this.sessions = fetchedData.sessions.map((session) => {
             //replace all YYYY-MM-DD date strings to DD/MM ones
             const formattedDateArray = session.day.split("-");
             formattedDateArray.reverse().pop();
-            session.day = formattedDateArray.join("/");
+            session.formattedDay = formattedDateArray.join("/");
 
             return session;
         });

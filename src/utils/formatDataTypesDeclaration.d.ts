@@ -10,7 +10,7 @@ export type InUserInfos =
 
 export type InUserActivity = {
     userId: number;
-    sessions: { day: string,kilogram: number,calories: number }[];
+    sessions: { day: string,kilogram: number,calories: number,formattedDay?: string }[];
 }
 
 export type InUserAverageSessions = {

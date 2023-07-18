@@ -39,7 +39,7 @@ function ActivityBarChart({ chartData }: { chartData: UserActivityObj[] }) {
                     <CartesianGrid strokeDasharray="2 2"
                         vertical={false} />
 
-                    <XAxis dataKey="day"
+                    <XAxis dataKey="formattedDay"
                         tickLine={false}
                         tick={{ fontSize: 14,fontWeight: 500 }}
                         padding={{ left: -47,right: -47 }}
