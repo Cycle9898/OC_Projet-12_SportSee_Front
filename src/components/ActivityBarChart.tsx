@@ -66,14 +66,14 @@ function ActivityBarChart({ chartData }: { chartData: UserActivityObj[] }) {
 
                     <Bar yAxisId="kilogram"
                         dataKey="kilogram"
-                        unit=" kg"
+                        unit="kg"
                         fill="#020203"
                         maxBarSize={7}
                         radius={[50,50,0,0]} />
 
                     <Bar yAxisId="calories"
                         dataKey="calories"
-                        unit=" kCal"
+                        unit="kCal"
                         fill="#FF0101"
                         maxBarSize={7}
                         radius={[50,50,0,0]} />

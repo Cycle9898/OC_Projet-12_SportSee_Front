@@ -1,0 +1,7 @@
+/* Tooltip on user's average sessions line chart */
+
+.average-sessions-LC-tooltip {
+    background-color: white;
+    @include font-set(0.6rem, 500);
+    padding: 8px 6px;
+}
