@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ActivityBarChart from "../components/ActivityBarChart";
 import AverageSessionsLineChart from "../components/AverageSessionsLineChart";
+import PerformanceRadarChart from "../components/PerformanceRadarChart";
 
 /* 
 React component that represent the Profile Page
@@ -47,7 +48,7 @@ function ProfilePage() {
             <div className="main-content__charts-grid">
               <ActivityBarChart chartData={fetchedData[1].sessions} />
               <AverageSessionsLineChart chartData={fetchedData[2].sessions} />
-              <div style={{ width: 258,height: 263,gridArea: "RC",backgroundColor: "darkslategrey" }}>RadarChart type activité</div>
+              <PerformanceRadarChart chartData={fetchedData[3].data} />
               <div style={{ width: 258,height: 263,gridArea: "RBC",backgroundColor: "coral" }}>RadialBarChart Score moyen</div>
               <div style={{ width: 258,height: 613,gridArea: "KIC",backgroundColor: "lightblue" }}>Card infos clés</div>
             </div>
