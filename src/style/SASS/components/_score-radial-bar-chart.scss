@@ -1,0 +1,27 @@
+/* Score Radial Bar Chart component */
+
+.score-chart {
+    grid-area: RBC;
+    max-height: 263px;
+    background-color: $bg-color;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    position: relative;
+
+    &__title {
+        color: #20253A;
+        @include font-set(0.9375rem, 500);
+        position: absolute;
+        top: 25px;
+        left: 30px;
+    }
+
+    .recharts-legend-wrapper {
+        line-height: 1.625rem;
+
+        .score-percent {
+            @include font-set(1.625rem, 700);
+            color: #282D30;
+        }
+    }
+}

@@ -41,7 +41,7 @@ function ActivityBarChart({ chartData }: { chartData: UserActivityObj[] }) {
 
                     <XAxis dataKey="formattedDay"
                         tickLine={false}
-                        tick={{ fontSize: 14,fontWeight: 500 }}
+                        tick={{ fontSize: "0.875rem",fontWeight: 500 }}
                         padding={{ left: -47,right: -47 }}
                         tickMargin={20} />
 
@@ -51,7 +51,7 @@ function ActivityBarChart({ chartData }: { chartData: UserActivityObj[] }) {
                         domain={["dataMin - 2","dataMax + 2"]}
                         axisLine={false}
                         tickLine={false}
-                        tick={{ fontSize: 14,fontWeight: 500 }}
+                        tick={{ fontSize: "0.875rem",fontWeight: 500 }}
                         tickMargin={45} />
 
                     <YAxis yAxisId="calories"

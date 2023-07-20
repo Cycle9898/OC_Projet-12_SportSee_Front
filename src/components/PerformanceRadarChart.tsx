@@ -19,7 +19,7 @@ function PerformanceRadarChart({ chartData }: { chartData: UserPerformanceObj[] 
 
                     <PolarAngleAxis dataKey="formattedKind"
                         stroke="white"
-                        tick={{ fontSize: 10,fontWeight: 500 }}
+                        tick={{ fontSize: "0.625rem",fontWeight: 500 }}
                         dy={3}
                         tickLine={false} />
 

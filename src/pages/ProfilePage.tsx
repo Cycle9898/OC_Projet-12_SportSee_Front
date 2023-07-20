@@ -5,6 +5,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import ActivityBarChart from "../components/ActivityBarChart";
 import AverageSessionsLineChart from "../components/AverageSessionsLineChart";
 import PerformanceRadarChart from "../components/PerformanceRadarChart";
+import ScoreRadialBarChart from "../components/ScoreRadialBarChart";
 
 /* 
 React component that represent the Profile Page
@@ -49,8 +50,8 @@ function ProfilePage() {
               <ActivityBarChart chartData={fetchedData[1].sessions} />
               <AverageSessionsLineChart chartData={fetchedData[2].sessions} />
               <PerformanceRadarChart chartData={fetchedData[3].data} />
-              <div style={{ width: 258,height: 263,gridArea: "RBC",backgroundColor: "coral" }}>RadialBarChart Score moyen</div>
-              <div style={{ width: 258,height: 613,gridArea: "KIC",backgroundColor: "lightblue" }}>Card infos clés</div>
+              <ScoreRadialBarChart chartData={[{ dailyScore: fetchedData[0].dailyScore }]} />
+              <div style={{ maxWidth: 258,height: 613,gridArea: "KIC",backgroundColor: "lightblue" }}>Card infos clés</div>
             </div>
           </section>
         )}

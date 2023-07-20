@@ -32,7 +32,7 @@ function AverageSessionsLineChart({ chartData }: { chartData: UserAverageSession
                         axisLine={false}
                         padding={{ left: 20,right: 20 }}
                         stroke="rgba(255,255,255,0.5"
-                        tick={{ fontSize: 12,fontWeight: 500 }}
+                        tick={{ fontSize: "0.75rem",fontWeight: 500 }}
                         tickMargin={10} />
 
                     <YAxis dataKey="sessionLength"
@@ -44,8 +44,7 @@ function AverageSessionsLineChart({ chartData }: { chartData: UserAverageSession
 
                     <Legend width={147}
                         align="left"
-                        iconSize={0}
-                        wrapperStyle={{ top: 35,left: 35,fontSize: 15,fontWeight: 500,color: "rgba(255,255,255, 0.5)" }}
+                        wrapperStyle={{ top: 35,left: 35,fontSize: "0.9375rem",fontWeight: 500,color: "rgba(255,255,255, 0.5)" }}
                         content={() => "Durée moyenne des sessions"} />
 
                     <Line dataKey="sessionLength"
