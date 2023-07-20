@@ -6,6 +6,7 @@ import ActivityBarChart from "../components/ActivityBarChart";
 import AverageSessionsLineChart from "../components/AverageSessionsLineChart";
 import PerformanceRadarChart from "../components/PerformanceRadarChart";
 import ScoreRadialBarChart from "../components/ScoreRadialBarChart";
+import KeyInfosCardsContainer from "../components/KeyInfosCardsContainer";
 
 /* 
 React component that represent the Profile Page
@@ -51,7 +52,7 @@ function ProfilePage() {
               <AverageSessionsLineChart chartData={fetchedData[2].sessions} />
               <PerformanceRadarChart chartData={fetchedData[3].data} />
               <ScoreRadialBarChart chartData={[{ dailyScore: fetchedData[0].dailyScore }]} />
-              <div style={{ maxWidth: 258,height: 613,gridArea: "KIC",backgroundColor: "lightblue" }}>Card infos clés</div>
+              <KeyInfosCardsContainer keyInfosData={fetchedData[0].keyData} />
             </div>
           </section>
         )}

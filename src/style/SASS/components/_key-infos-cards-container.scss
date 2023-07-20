@@ -1,0 +1,8 @@
+/* Key Infos Cards Container */
+
+.key-info-container {
+    grid-area: KIC;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
