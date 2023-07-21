@@ -40,7 +40,7 @@ function ProfilePage() {
         {isDataLoading ? (
           <LoadingSpinner />
         ) : (
-          fetchedData.length > 0 &&
+          fetchedData.length === 4 &&
           <section className="main-content">
             <div className="main-content__title">
               <h1>Bonjour <span>{fetchedData[0].firstName}</span></h1>

@@ -34,6 +34,7 @@ export type UserActivityObj = {
     day: string;
     kilogram: number;
     calories: number;
+    formattedDay: string;
 }
 
 export type UserAverageSessionsObj = {
@@ -47,3 +48,15 @@ export type UserPerformanceObj = {
     kind: number;
     formattedKind: string;
 }
+
+export type UserAllData = [
+    UserInfoObj,
+    { sessions: UserActivityObj[] },
+    { sessions: UserAverageSessionsObj[] },
+    { data: UserPerformanceObj[] }
+];
+
+export type UserSoloData = UserInfoObj |
+{ sessions: UserActivityObj[] } |
+{ sessions: UserAverageSessionsObj[] } |
+{ data: UserPerformanceObj[] };
