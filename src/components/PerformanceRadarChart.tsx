@@ -14,7 +14,7 @@ function PerformanceRadarChart({ chartData }: { chartData: UserPerformanceObj[] 
     return (
         <article className="performance-chart">
             <ResponsiveContainer width="100%" height={263}>
-                <RadarChart data={chartData} outerRadius="67%" >
+                <RadarChart data={chartData} outerRadius={window.innerWidth > 1370 ? "67%" : "55%"} >
                     <PolarGrid radialLines={false} />
 
                     <PolarAngleAxis dataKey="formattedKind"

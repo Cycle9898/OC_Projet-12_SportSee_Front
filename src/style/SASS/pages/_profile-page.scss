@@ -8,6 +8,10 @@
     width: 100%;
     padding: 60px 100px;
 
+    @media (max-width: $breakpoint-laptop) {
+        padding: 30px 20px;
+    }
+
     &__title {
         margin-bottom: 70px;
 

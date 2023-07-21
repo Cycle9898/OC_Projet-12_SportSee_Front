@@ -32,7 +32,7 @@ function ActivityBarChart({ chartData }: { chartData: UserActivityObj[] }) {
 
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartData}
-                    margin={{ top: 60,right: 40,bottom: 65,left: 45 }}
+                    margin={{ top: 50,right: 40,bottom: 65,left: 45 }}
                     barCategoryGap="40%"
                     barGap={8}>
 
