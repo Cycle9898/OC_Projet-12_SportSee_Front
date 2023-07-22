@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+(EN)
+# OpenClassroom project 12 : SportSee
+
+## Introduction
+
+This project represents an user profile page, the dashboard on a sports coaching website, where the user can follow his progress.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+The page was integrated from a [Figma mockup](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
 
-In the project directory, you can run:
+The [Recharts](https://recharts.org/en-US) library was used to make the charts.
 
-### `yarn start`
+Data is retrieved via an API. More infos on this API [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
 
-Runs the app in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+Data from 2 users is currently available through the API.
+We get their respective data by changing the environment variable (.env file) 'REACT_APP_API_USER_ID' by the user ID (12 or 18).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It is also possible to use mocked data by changing the environment variable (.env file) 'REACT_APP_MOCK_API' with 'MOCK' value instead of 'API'.
 
-### `yarn test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.JS](https://nodejs.org/en)
 
-### `yarn build`
+- [Yarn](https://yarnpkg.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Getting Started (Back-end)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clone the back-end repo : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Inside the back-end folder, install all dependencies with : `yarn`
 
-### `yarn eject`
+- Then start the back-end part with : `yarn dev`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Getting Started (Front-end)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone this repo : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Inside the front-end folder, install all dependencies with : `yarn`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Then start the front-end part with : `yarn start`
 
-## Learn More
+This command runs the app in the development mode.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open http://localhost:3001 to view it in the browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The port can be configured with the 'PORT' environment variable (.env file). Warning: port 3000 is reserved for the API.
+
+(FR)
+# OpenClassroom projet 12 : SportSee
+
+## Présentation
+
+Ce projet représente une page de profil utilisateur, le tableau de bord d'un site de coaching sportif, où l'utilisateur peut suivre sa progression.
+
+Ce projet a été initialisé avec [Create React App](https://github.com/facebook/create-react-app).
+
+La page a été intégrée à partir d'une [maquette Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
+
+La bibliothèque [Recharts](https://recharts.org/en-US) a été utilisée pour créer les graphiques.
+
+Les données sont récupérées via une API. Plus d'infos sur cette API [ici](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+
+Les données de 2 utilisateurs sont actuellement disponibles via l'API.
+On obtient leurs données respectives en changeant la variable d'environnement (fichier .env) 'REACT_APP_API_USER_ID' par l'ID de l'utilisateur (12 ou 18).
+
+Il est également possible d'utiliser des données simulées en changeant la variable d'environnement (fichier .env) 'REACT_APP_MOCK_API' avec la valeur 'MOCK' au lieu de 'API'.
+
+## Prérequis
+
+- [Node.JS](https://nodejs.org/fr)
+
+- [Yarn](https://yarnpkg.com/)
+
+# Lancement du projet (Back-end)
+
+- Cloner le dépôt du back-end : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
+
+- À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
+
+- Ensuite, démarrer la partie back-end avec : `yarn dev`
+
+# Lancement du projet (Front-end)
+
+- Cloner ce dépôt : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
+
+- À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
+
+- Ensuite, démarrer la partie front-end avec : `yarn start`
+
+Cette commande exécute l'application en mode développement.
+
+Ouvrir http://localhost:3001 pour la voir dans un navigateur web.
+
+Le port peut être configuré avec la variable d'environnement 'PORT' (fichier .env). Attention : le port 3000 est réservé à l'API.
