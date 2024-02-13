@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import ProfilePage from './pages/ProfilePage';
-import './style/CSS/normalize.css';
-import './style/SASS/main.scss';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./style/CSS/normalize.css";
+import "./style/SASS/main.scss";
+import AppRouter from "./Router";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+	document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <ProfilePage />
-  </React.StrictMode>
+	<React.StrictMode>
+		<AppRouter />
+	</React.StrictMode>
 );
