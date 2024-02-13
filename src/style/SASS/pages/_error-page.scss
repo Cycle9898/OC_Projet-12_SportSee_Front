@@ -1,0 +1,23 @@
+/* Error Page */
+
+.Error-main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		font-size: 15rem;
+		color: $main-color;
+	}
+
+	h2 {
+		font-size: 5rem;
+	}
+
+	p {
+		font-size: 3rem;
+	}
+}
