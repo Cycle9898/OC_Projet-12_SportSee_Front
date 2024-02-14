@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import ErrorPage from "./pages/ErrorPage";
+import ContextProvider from "./utils/Context";
 
 const Layout = () => {
 	return (
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
 ]);
 
 function AppRouter() {
-	return <RouterProvider router={router} />;
+	return (
+		<ContextProvider>
+			<RouterProvider router={router} />
+		</ContextProvider>
+	);
 }
 
 export default AppRouter;
