@@ -9,7 +9,9 @@ type Props = {
 	children: JSX.Element;
 };
 
-export const UserIDContext = createContext<UserIDContextType | null>(null);
+export const UserIDContext = createContext<UserIDContextType>(
+	{} as UserIDContextType
+);
 
 function ContextProvider({ children }: Props) {
 	// Context related
