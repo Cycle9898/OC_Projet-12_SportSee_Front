@@ -1,5 +1,4 @@
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
+import mainLogo from "../assets/logo/logo.png";
 
 /* 
 React component that represent the Profile Page
@@ -7,10 +6,20 @@ React component that represent the Profile Page
 function HomePage() {
 	return (
 		<>
-			<Header />
+			<main className="Home-main">
+				<div className="Home-main__logo">
+					<img src={mainLogo} alt="SportSee logo" />
+				</div>
 
-			<main>
-				<SideBar />
+				<h1>
+					Choisissez un utilisateur pour accéder automatiquement à son
+					profil
+				</h1>
+
+				<div className="Home-main__buttons">
+					<button>Karl</button>
+					<button>Cecilia</button>
+				</div>
 			</main>
 		</>
 	);
