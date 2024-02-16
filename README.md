@@ -1,95 +1,121 @@
 (EN)
-# OpenClassroom project 12 : SportSee
 
-## Introduction
+# OpenClassrooms projet 12 : SportSee
 
-This project represents an user profile page, the dashboard on a sports coaching website, where the user can follow his progress.
+## Context
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project represents the new user profile page of the SportSee website, an imaginary startup dedicated to sports coaching.
 
-The page was integrated from a [Figma mockup](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The [Recharts](https://recharts.org/en-US) library was used to make the charts.
+This page will notably allow the user to track the number of sessions completed as well as the number of calories burned.
 
-Data is retrieved via an API. More infos on this API [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+It was integrated from a [Figma mockup](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
 
-Data from 2 users is currently available through the API.
-We get their respective data by changing the environment variable (.env file) 'REACT_APP_API_USER_ID' by the user ID (12 or 18).
+The [Recharts](https://recharts.org/en-US) library was used to create the charts.
 
-It is also possible to use mocked data by changing the environment variable (.env file) 'REACT_APP_MOCK_API' with 'MOCK' value instead of 'API'.
+The data are fetched from an API. More info on this one [here](https://github.com/Cycle9898/OC_Projet-12_SportSee_Back).
 
-## Prerequisites
+The REACT_APP_API_URL environment variable (in .env file) stores the API URI.
 
-- [Node.JS](https://nodejs.org/en)
+Data from 2 unique users are currently available via the API.
 
-- [Yarn](https://yarnpkg.com/)
+It is possible to launch the application with one of these users by clicking on their first name on the home page.
 
-# Getting Started (Back-end)
+This additional page was created to make it easier to test the profile page with different data.
 
-- Clone the back-end repo : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
+Mocked data is also provided with the application (JSON files present in the 'src/data' folder).
 
-- Inside the back-end folder, install all dependencies with : `yarn`
+## Web application overview
 
-- Then start the back-end part with : `yarn dev`
+### Prerequisites
 
-# Getting Started (Front-end)
+-   [Node.JS](https://nodejs.org/en)
 
-- Clone this repo : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
+-   [Yarn](https://yarnpkg.com/)
 
-- Inside the front-end folder, install all dependencies with : `yarn`
+### Back-end local start-up
 
-- Then start the front-end part with : `yarn start`
+-   Clone the back-end repository : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
 
-This command runs the app in the development mode.
+-   Inside the cloned folder, install all dependencies with : `yarn`
 
-Open http://localhost:3001 to view it in the browser.
+-   Then start the back-end with : `yarn dev`
 
-The port can be configured with the 'PORT' environment variable (.env file). Warning: port 3000 is reserved for the API.
+### Front-end local start-up
+
+-   Clone this repository : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
+
+-   Inside the cloned folder, install all dependencies with : `yarn`
+
+-   Modify or add the REACT_APP_API_URL environment variable (.env file) with the URI (base) of the API whether it is launched locally or hosted online.
+    If this variable is not defined, the application will run with mocked data.
+
+-   Then start the front-end with : `yarn start`
+
+This command runs the application in development mode.
+
+Open http://localhost:3001 in your browser to use it.
+
+The port can be configured with the 'PORT' environment variable (.env file). Warning: port 3000 is reserved for the API (if launched locally).
 
 (FR)
-# OpenClassroom projet 12 : SportSee
 
-## Présentation
+# OpenClassrooms projet 12 : SportSee
 
-Ce projet représente une page de profil utilisateur, le tableau de bord d'un site de coaching sportif, où l'utilisateur peut suivre sa progression.
+## Contexte
 
-Ce projet a été initialisé avec [Create React App](https://github.com/facebook/create-react-app).
+Ce projet représente la nouvelle page de profil utilisateur du site de SportSee, une startup imaginaire dédiée au coaching sportif.
 
-La page a été intégrée à partir d'une [maquette Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
+Il a été initialisé avec [Create React App](https://github.com/facebook/create-react-app).
+
+Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
+
+Elle a été intégrée à partir d'une [maquette Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&mode=design).
 
 La bibliothèque [Recharts](https://recharts.org/en-US) a été utilisée pour créer les graphiques.
 
-Les données sont récupérées via une API. Plus d'infos sur cette API [ici](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+Les données sont récupérées via une API. Plus d'infos sur celle-ci [ici](https://github.com/Cycle9898/OC_Projet-12_SportSee_Back).
+
+La variable d'environnement REACT_APP_API_URL (fichier .env) permet de stocker l'URI de l'API.
 
 Les données de 2 utilisateurs sont actuellement disponibles via l'API.
-On obtient leurs données respectives en changeant la variable d'environnement (fichier .env) 'REACT_APP_API_USER_ID' par l'ID de l'utilisateur (12 ou 18).
 
-Il est également possible d'utiliser des données simulées en changeant la variable d'environnement (fichier .env) 'REACT_APP_MOCK_API' avec la valeur 'MOCK' au lieu de 'API'.
+On peut lancer l'application avec l'un de ces utilisateurs en cliquant sur leur prénom à la page d'accueil.
 
-## Prérequis
+Cette page supplémentaire a été réalisée pour faciliter le test de la page de profil avec des données différentes.
 
-- [Node.JS](https://nodejs.org/fr)
+Des données mockées sont également fournies avec l'application (fichiers JSON présents dans le dossier 'src/data').
 
-- [Yarn](https://yarnpkg.com/)
+## Aperçu de l'application web
 
-# Lancement du projet (Back-end)
+### Prérequis
 
-- Cloner le dépôt du back-end : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
+-   [Node.JS](https://nodejs.org/fr)
 
-- À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
+-   [Yarn](https://yarnpkg.com/)
 
-- Ensuite, démarrer la partie back-end avec : `yarn dev`
+### Lancement du Back-end en local
 
-# Lancement du projet (Front-end)
+-   Cloner le dépôt du back-end : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Back.git`
 
-- Cloner ce dépôt : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
+-   À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
 
-- À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
+-   Ensuite, démarrer la partie back-end avec : `yarn dev`
 
-- Ensuite, démarrer la partie front-end avec : `yarn start`
+### Lancement du Front-end en local
+
+-   Cloner ce dépôt : `git clone https://github.com/Cycle9898/OC_Projet-12_SportSee_Front.git`
+
+-   À l'intérieur du dossier cloné, installer toutes les dépendances avec : `yarn`
+
+-   Modifier ou ajouter la variable d'environnement REACT_APP_API_URL (fichier .env) avec l'URI (base) de l'API qu'elle soit lancée en local ou hébergée en ligne.
+    Si cette variable n'est pas définie, l'application tournera avec les données mockées.
+
+-   Ensuite, démarrer la partie front-end avec : `yarn start`
 
 Cette commande exécute l'application en mode développement.
 
 Ouvrir http://localhost:3001 pour la voir dans un navigateur web.
 
-Le port peut être configuré avec la variable d'environnement 'PORT' (fichier .env). Attention : le port 3000 est réservé à l'API.
+Le port peut être configuré avec la variable d'environnement 'PORT' (fichier .env). Attention : le port 3000 est réservé à l'API(si lancée en local).
