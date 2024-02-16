@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/OC_Projet-12_SportSee_Front/static/css/main.c4536317.css",
+    "main.js": "/OC_Projet-12_SportSee_Front/static/js/main.1bf441f9.js",
+    "static/media/logo.png": "/OC_Projet-12_SportSee_Front/static/media/logo.8720f71be76e16a1d2e8.png",
+    "static/media/swimming-icon.svg": "/OC_Projet-12_SportSee_Front/static/media/swimming-icon.50fd276e656a6938ed0b140dbb54531d.svg",
+    "static/media/cycling-icon.svg": "/OC_Projet-12_SportSee_Front/static/media/cycling-icon.5022362011b977de524796b208551926.svg",
+    "static/media/yoga-icon.svg": "/OC_Projet-12_SportSee_Front/static/media/yoga-icon.cd791aa5921ff328acf8053934bf7f60.svg",
+    "static/media/bodybuilding-icon.svg": "/OC_Projet-12_SportSee_Front/static/media/bodybuilding-icon.4cb1a50575d330a57e77fd00d6e4c8e1.svg",
+    "index.html": "/OC_Projet-12_SportSee_Front/index.html",
+    "main.c4536317.css.map": "/OC_Projet-12_SportSee_Front/static/css/main.c4536317.css.map",
+    "main.1bf441f9.js.map": "/OC_Projet-12_SportSee_Front/static/js/main.1bf441f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4536317.css",
+    "static/js/main.1bf441f9.js"
+  ]
+}
