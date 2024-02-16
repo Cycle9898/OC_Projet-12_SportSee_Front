@@ -19,29 +19,34 @@ const Layout = () => {
 	);
 };
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			element: <Layout />,
+			children: [
+				{
+					path: "/",
+					element: <HomePage />
+				},
+				{
+					path: "/profile",
+					element: <ProfilePage />
+				},
+				{
+					path: "/error",
+					element: <ErrorPage />
+				},
+				{
+					path: "/*",
+					element: <Navigate to="/error" replace />
+				}
+			]
+		}
+	],
 	{
-		element: <Layout />,
-		children: [
-			{
-				path: "/",
-				element: <HomePage />
-			},
-			{
-				path: "/profile",
-				element: <ProfilePage />
-			},
-			{
-				path: "/error",
-				element: <ErrorPage />
-			},
-			{
-				path: "/*",
-				element: <Navigate to="/error" replace />
-			}
-		]
+		basename: "/OC_Projet-12_SportSee_Front/"
 	}
-]);
+);
 
 function AppRouter() {
 	return (
